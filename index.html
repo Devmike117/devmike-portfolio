@@ -1023,33 +1023,23 @@
 <!-- Lógica de EmailJS -->
 
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="assets/js/emailjs.js"></script>
 <script>
-  emailjs.init("4wRnpCV-sT35bRVvF"); 
 
-  const btn = document.getElementById('send-button');
+  document.addEventListener("keydown", function (e) {
+    
+    if (
+      e.key === "F12" ||
+      (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) ||
+      (e.ctrlKey && e.key === "u")
+    ) {
+      e.preventDefault();
+    }
+  });
 
-  document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    btn.textContent = 'Enviando...';
-
-    const serviceID = 'service_co9oyhn';
-    const templateID = 'template_2ptdylu';
-
-    const templateParams = {
-      from_name: document.getElementById('from_name').value,
-      from_email: document.getElementById('from_email').value,
-      message: document.getElementById('message').value
-    };
-
-    emailjs.send(serviceID, templateID, templateParams)
-      .then(() => {
-        btn.textContent = 'Enviar mensaje';
-        alert('¡Mensaje enviado con éxito!');
-      }, (err) => {
-        btn.textContent = 'Enviar mensaje';
-        alert('Error al enviar: ' + JSON.stringify(err));
-      });
+  
+  document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
   });
 </script>
 
