@@ -960,72 +960,27 @@
     </div>
 
   </main>
-
-
-
-
-
-
   <!--
     - JS principal
   -->
   <script src="./assets/js/script.js"></script>
-
-  <script>
-  const tecnologiasData = [
-    { id: 1, nombre: "HTML", imagen: "html" },
-    { id: 2, nombre: "CSS", imagen: "css" },
-    { id: 3, nombre: "JavaScript", imagen: "javascript" },
-    { id: 4, nombre: "React", imagen: "react" },
-    { id: 5, nombre: "Node.js", imagen: "nodejs" },
-    { id: 6, nombre: "Python", imagen: "python" },
-    { id: 7, nombre: "Github", imagen: "github" },
-    { id: 8, nombre: "Figma", imagen: "figma" },
-    { id: 9, nombre: "Docker", imagen: "docker" },
-    { id: 10, nombre: "macOS", imagen: "apple" },
-    { id: 11, nombre: "Linux", imagen: "linux" },
-    { id: 12, nombre: "Windows", imagen: "windows" },
-    { id: 13, nombre: "Android studio", imagen: "androidstudio" },
-    { id: 14, nombre: "AWS", imagen: "aws" },
-    { id: 15, nombre: "Azure", imagen: "azure" },
-    { id: 16, nombre: "Google cloud", imagen: "googlecloud" },
-    { id: 17, nombre: "Visual studio", imagen: "visual" },
-    { id: 18, nombre: "Visual studio code", imagen: "vscode" },
-    { id: 19, nombre: "IntelliJ", imagen: "intellij" },
-    { id: 20, nombre: "Unreal", imagen: "unreal" },
-    { id: 21, nombre: "Blender", imagen: "blender" },
-
-  ];
-
-  function renderTecnologias(trackId) {
-    const track = document.getElementById(trackId);
-    for (let i = 0; i < 2; i++) { // efecto infinito
-      tecnologiasData.forEach(tecnologia => {
-        const item = document.createElement("div");
-        item.className = "tecnologia-item";
-        item.innerHTML = `
-          <img src="./assets/images/${tecnologia.imagen}.svg" alt="imagen de ${tecnologia.nombre}" />
-          <span>${tecnologia.nombre}</span>
-        `;
-        track.appendChild(item);
-        //tiempo de deslizamiento
-        item.style.animationDuration = `${Math.random() * 10 + 10}s`; //
-
-      });
-    }
-  }
-
-  renderTecnologias("scroll-track-1");
-  renderTecnologias("scroll-track-2");
-</script>
-
-
-<!-- Lógica de EmailJS -->
+<!-- 
+   - Lógica de EmailJS 
+-->
 
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script src="assets/js/emailjs.js"></script>
-<script>
 
+  <!--
+    - link de ionicons
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!--
+    - Bloquear herramientas de desarrollador
+  -->
+  <script>
   document.addEventListener("keydown", function (e) {
     
     if (
@@ -1036,20 +991,11 @@
       e.preventDefault();
     }
   });
-
   
   document.addEventListener("contextmenu", function (e) {
     e.preventDefault();
   });
 </script>
-
-
-
-  <!--
-    - link de ionicons
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
 
