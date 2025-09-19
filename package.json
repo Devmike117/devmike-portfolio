@@ -2,7 +2,7 @@
   "name": "devmike-portfolio",
   "version": "1.0.0",
   "dependencies": {
-    "@emailjs/nodejs": "^3.1.0"
-  }
+  "@emailjs/nodejs": "^3.0.12"
+}
 }
 
