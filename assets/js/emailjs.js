@@ -11,9 +11,11 @@ document.getElementById('contact-form').addEventListener('submit', function(even
   };
 
   fetch('/.netlify/functions/sendEmail', {
-    method: 'POST',
-    body: JSON.stringify(data)
-  })
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(data)
+})
+
   .then(res => res.json())
   .then(result => {
     btn.textContent = 'Enviar mensaje';
