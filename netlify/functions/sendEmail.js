@@ -10,9 +10,9 @@ exports.handler = async function(event) {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        service_id: process.env.EMAILJS_SERVICE_ID,
-        template_id: process.env.EMAILJS_TEMPLATE_ID,
-        user_id: process.env.EMAILJS_PUBLIC_KEY, 
+        service_id: process.env.EMAILJS_SERVICE_ID,   
+        template_id: process.env.EMAILJS_TEMPLATE_ID, 
+        user_id: process.env.EMAILJS_PRIVATE_KEY,    
         template_params: {
           from_name: data.from_name,
           from_email: data.from_email,
@@ -38,3 +38,4 @@ exports.handler = async function(event) {
     };
   }
 };
+
