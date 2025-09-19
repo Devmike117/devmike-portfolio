@@ -1,27 +1,31 @@
-  emailjs.init("4wRnpCV-sT35bRVvF"); 
+const btn = document.getElementById('send-button');
 
-  const btn = document.getElementById('send-button');
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  btn.textContent = 'Enviando...';
 
-  document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
+  const data = {
+    from_name: document.getElementById('from_name').value,
+    from_email: document.getElementById('from_email').value,
+    message: document.getElementById('message').value
+  };
 
-    btn.textContent = 'Enviando...';
-
-    const serviceID = 'service_co9oyhn';
-    const templateID = 'template_2ptdylu';
-
-    const templateParams = {
-      from_name: document.getElementById('from_name').value,
-      from_email: document.getElementById('from_email').value,
-      message: document.getElementById('message').value
-    };
-
-    emailjs.send(serviceID, templateID, templateParams)
-      .then(() => {
-        btn.textContent = 'Enviar mensaje';
-        alert('¡Mensaje enviado con éxito!');
-      }, (err) => {
-        btn.textContent = 'Enviar mensaje';
-        alert('Error al enviar: ' + JSON.stringify(err));
-      });
+  fetch('/.netlify/functions/sendEmail', {
+    method: 'POST',
+    body: JSON.stringify(data)
+  })
+  .then(res => res.json())
+  .then(result => {
+    btn.textContent = 'Enviar mensaje';
+    if (result.success) {
+      alert('¡Mensaje enviado con éxito!');
+    } else {
+      alert('Error al enviar: ' + result.error);
+    }
+  })
+  .catch(err => {
+    btn.textContent = 'Enviar mensaje';
+    alert('Error inesperado: ' + err.message);
   });
+});
+
