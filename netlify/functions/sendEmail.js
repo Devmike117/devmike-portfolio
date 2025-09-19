@@ -1,23 +1,29 @@
 const fetch = require("node-fetch"); 
 
 exports.handler = async function(event) {
-  const data = JSON.parse(event.body);
-
   try {
+    const data = JSON.parse(event.body);
+
+    if (!data.from_name || !data.from_email || !data.message) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ success: false, error: "Missing required fields" })
+      };
+    }
+
+    
     const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        service_id: process.env.EMAILJS_SERVICE_ID,   
-        template_id: process.env.EMAILJS_TEMPLATE_ID, 
-        user_id: process.env.EMAILJS_PRIVATE_KEY,    
+        service_id: process.env.EMAILJS_SERVICE_ID,
+        template_id: process.env.EMAILJS_TEMPLATE_ID,
         template_params: {
           from_name: data.from_name,
           from_email: data.from_email,
           message: data.message
-        }
+        },
+        accessToken: process.env.EMAILJS_PRIVATE_KEY 
       })
     });
 
@@ -38,4 +44,3 @@ exports.handler = async function(event) {
     };
   }
 };
-
