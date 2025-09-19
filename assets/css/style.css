@@ -96,9 +96,6 @@
 }
 
 
-
-
-
 /*-----------------------------------*\
   #RESETS
 \*-----------------------------------*/
@@ -140,8 +137,6 @@ input, textarea {
 html { font-family: var(--ff-poppins); }
 
 body { background: var(--smoky-black); }
-
-
 
 
 
@@ -240,8 +235,8 @@ article.active {
 }
 
 .has-scrollbar::-webkit-scrollbar {
-  width: 5px; /* para la barra de desplazamiento vertical */
-  height: 5px; /* para la barra de desplazamiento horizontal */
+  width: 5px; 
+  height: 5px; 
 }
 
 .has-scrollbar::-webkit-scrollbar-track {
@@ -277,9 +272,6 @@ article.active {
 }
 
 
-
-
-
 /*-----------------------------------*\
   #Inicio
 \*-----------------------------------*/
@@ -289,9 +281,6 @@ main {
   margin-bottom: 75px;
   min-width: 259px;
 }
-
-
-
 
 
 /*-----------------------------------*\
@@ -413,16 +402,13 @@ main {
 }
 
 
-
 .contact-link:hover {
-  color: var(--vegas-gold); /* Color al pasar el mouse */
+  color: var(--vegas-gold); 
 }
 
 .contact-link:active {
-  color: #f44336; /* Color al hacer clic */
+  color: #f44336; 
 }
-
-
 
 
 .contact-info address { font-style: normal; }
@@ -443,9 +429,6 @@ main {
 
 
 .social-item .social-link:hover { color: var(--light-gray); }
-
-
-
 
 
 /*-----------------------------------*\
@@ -487,10 +470,8 @@ main {
 
 
 
-
-
 /*-----------------------------------*\
-  #ABOUT
+  #ACERCA
 \*-----------------------------------*/
 
 .about .article-title { margin-bottom: 15px; }
@@ -507,7 +488,7 @@ main {
 
 
 /**
- * #service 
+ * #servicios
  */
 
 .service { margin-bottom: 35px; }
@@ -555,7 +536,7 @@ main {
 
 
 /**
- * #testimonials 
+ * #CERTIFICADOS TESTIMONIOS 
  */
 
 .testimonials { margin-bottom: 30px; }
@@ -607,7 +588,7 @@ main {
 
 
 /**
- * #testimonials-modal
+ * #CERTIFICADOS TESTIMONIOS MODAL
  */
 
 .modal-container {
@@ -721,7 +702,7 @@ main {
 
 
 /**
- * #clients 
+ * #clientes (PARA FUTURAS VERSIONES)
  */
 
 .clients { margin-bottom: 15px; }
@@ -756,17 +737,15 @@ main {
 
 
 
-
-
 /*-----------------------------------*\
-  #RESUME
+  #RESUMEN
 \*-----------------------------------*/
 
 .article-title { margin-bottom: 30px; }
 
 
 /**
- * education and experience 
+ * EDUCACION Y EXPERIENCIA
  */
 
 .timeline { margin-bottom: 30px; }
@@ -829,7 +808,7 @@ main {
 
 
 /**
- * skills 
+ * HABILIDADES
  */
 
 .skills-title { margin-bottom: 20px; }
@@ -864,9 +843,6 @@ main {
   height: 100%;
   border-radius: inherit;
 }
-
-
-
 
 
 /*-----------------------------------*\
@@ -1025,11 +1001,8 @@ main {
 }
 
 
-
-
-
 /*-----------------------------------*\
-  #BLOG
+  #BLOG PORTFOLIO
 \*-----------------------------------*/
 
 .blog-posts { margin-bottom: 10px; }
@@ -1113,11 +1086,8 @@ main {
 }
 
 
-
-
-
 /*-----------------------------------*\
-  #CONTACT
+  #CONTACTO
 \*-----------------------------------*/
 
 .mapbox {
@@ -1220,21 +1190,18 @@ textarea.form-input::-webkit-resizer { display: none; }
 .form-btn:disabled:hover::before { background: var(--bg-gradient-jet); }
 
 
-
-
-
 /*-----------------------------------*\
   #RESPONSIVE
 \*-----------------------------------*/
 
 /**
- * responsive larger than 450px screen
+ * responsive para pantallas mayores a 450px
  */
 
 @media (min-width: 450px) {
 
   /**
-   * client
+   * clientes (PARA FUTURAS VERSIONES)
    */
 
   .clients-item { min-width: calc(33.33% - 10px); }
@@ -1251,23 +1218,17 @@ textarea.form-input::-webkit-resizer { display: none; }
 }
 
 
-
-
-
 /**
- * responsive larger than 580px screen
+ * responsive para pantallas mayores a 580px
  */
 
 @media (min-width: 580px) {
 
-  /**
-   * CUSTOM PROPERTY
-   */
 
   :root {
 
     /**
-     * typography
+     * tipografia
      */
 
     --fs-1: 32px;
@@ -1280,10 +1241,8 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   }
 
-
-
   /**
-   * #REUSED STYLE
+   * #reutilizables
    */
 
   .sidebar, article {
@@ -1308,7 +1267,6 @@ textarea.form-input::-webkit-resizer { display: none; }
     border-radius: 12px;
     font-size: 18px;
   }
-
 
 
   /**
@@ -1366,7 +1324,6 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
 
-
   /**
    * #NAVBAR
    */
@@ -1380,14 +1337,14 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
   /**
-   * #ABOUT
+   * #ACERCA
    */
 
   .about .article-title { margin-bottom: 20px; }
 
   .about-text { margin-bottom: 40px; }
 
-  /* service */
+  /* servicios */
 
   .service-item {
     display: flex;
@@ -1404,7 +1361,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .service-content-box { text-align: left; }
 
-  /* testimonials */
+  /* certificados testimoniales */
 
   .testimonials-title { margin-bottom: 25px; }
 
@@ -1437,7 +1394,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     -webkit-line-clamp: 2;
   }
 
-  /* testimonials modal */
+  /* certificados testimoniales modal */
 
   .modal-container { padding: 20px; }
 
@@ -1469,7 +1426,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     width: 35px;
   }
 
-  /* clients */
+  /* clientes (PARA FUTURAS VERSIONES) */
 
   .clients-list {
     gap: 50px;
@@ -1483,7 +1440,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
   /**
-   * #RESUME
+   * #RESUMEn
    */
 
   .timeline-list { margin-left: 65px; }
@@ -1513,7 +1470,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
   /**
-   * #CONTACT
+   * #CONTACTo
    */
 
   .mapbox {
@@ -1541,16 +1498,14 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
 
-
-
 /**
- * responsive larger than 768px screen
+ * responsivo mayor a 768px pantalla
  */
 
 @media (min-width: 768px) {
 
   /**
-   * REUSED STYLE
+   * estilo reutilizable
    */
 
   .sidebar, article { width: 700px; }
@@ -1579,10 +1534,10 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
   /**
-   * ABOUT
+   * ACERCA
    */
 
-  /* testimonials modal */
+  /* certificados testimoniales modal */
 
   .testimonials-modal {
     gap: 35px;
@@ -1620,14 +1575,14 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .filter-item button.active { color: var(--orange-yellow-crayola); }
 
-  /* portfolio and blog grid */
+  /* PORTFOLIO, BLOG */
 
   .project-list, .blog-posts-list { grid-template-columns: 1fr 1fr; }
 
 
 
   /**
-   * CONTACT
+   * CONTACTO
    */
 
   .input-wrapper { grid-template-columns: 1fr 1fr; }
@@ -1644,13 +1599,13 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
 /**
- * responsive larger than 1024px screen
+ * responsivo mayor a 1024px pantalla
  */
 
 @media (min-width: 1024px) {
 
   /**
-   * CUSTOM PROPERTY
+   * PERSONALIZACION DE SCROLLBAR
    */
 
   :root {
@@ -1668,7 +1623,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
   /**
-   * REUSED STYLE
+   * ESTILO REUTILIZABLE
    */
 
   .sidebar, article {
@@ -1718,21 +1673,21 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
   /**
-   * ABOUT
+   * ACERCA
    */
 
-  /* service */
+  /* servicio */
 
   .service-list {
     grid-template-columns: 1fr 1fr;
     gap: 20px 25px;
   }
 
-  /* testimonials */
+  /* certificados testimoniales modal */
 
   .testimonials-item { min-width: calc(50% - 15px); }
 
-  /* clients */
+  /* clientes (PARA FUTURAS VERSIONES) */
 
   .clients-item { min-width: calc(25% - 38px); }
 
@@ -1759,7 +1714,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
 /**
- * responsive larger than 1250px screen
+ * responsivo mayor a 1250px pantalla
  */
 
 @media (min-width: 1250px) {
@@ -1787,7 +1742,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
   /**
-   * REUSED STYLE
+   * estilos reutilizables
    */
 
   .sidebar, article { width: auto; }
@@ -1872,7 +1827,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
   /**
-	 * RESUME
+	 * RESUMEn
 	 */
 
   .timeline-text { max-width: 700px; }
@@ -1923,25 +1878,23 @@ textarea.form-input::-webkit-resizer { display: none; }
     }
   }
 
-
-
-  
-
-
+/**
+ * EDUCACION Y EXPERIENCIA IMAGENES
+ */
 .picture-education {
-  display: inline-block;              /* Solo ocupa el tamaño del contenido */
-  position: relative;                /* Para mover con transform sin romper el flujo */
-  transform: translate(15px, -25px); /* Ajuste visual */
+  display: inline-block;              
+  position: relative;                
+  transform: translate(15px, -25px); 
   background: #fff;
   border-radius: 14px;
   box-shadow: var(--shadow-1);
-  padding: 6px;                      /* Espacio interno alrededor de la imagen */
-  margin-left: 0;                    /* Alineación izquierda */
+  padding: 6px;                      
+  margin-left: 0;                    
 }
 
 .picture-education img {
   width: 65px;
-  display: block;                    /* Elimina espacios extra debajo de la imagen */
+  display: block;                    
 }
 
 

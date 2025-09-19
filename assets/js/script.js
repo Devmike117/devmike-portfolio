@@ -1,6 +1,6 @@
 'use strict';
 
-// Helper para alternar clases
+// Función para alternar clases
 const elementToggleFunc = (elem) => elem.classList.toggle("active");
 
 // Sidebar
@@ -40,7 +40,7 @@ testimonialsItem.forEach(item => {
 modalCloseBtn.addEventListener("click", closeModal);
 overlay.addEventListener("click", closeModal);
 
-// Filtros de proyectos (móvil + escritorio)
+// Filtros de proyectos (móvil y escritorio)
 const filterBtns = document.querySelectorAll("[data-filter-btn]");
 const projectItems = document.querySelectorAll("[data-filter-item]");
 const select = document.querySelector("[data-select]");
@@ -62,7 +62,7 @@ select.addEventListener("click", (event) => {
   elementToggleFunc(select);
 });
 
-// Seleccionar categoría en dropdown móvil
+// Seleccionar opción del dropdown móvil
 selectItems.forEach(item => {
   item.addEventListener("click", function (event) {
     event.stopPropagation();
@@ -77,7 +77,7 @@ selectItems.forEach(item => {
   });
 });
 
-// Selección desde botones escritorio
+
 filterBtns.forEach(btn => {
   btn.addEventListener("click", () => {
     const selectedText = btn.innerText.trim();
@@ -86,12 +86,12 @@ filterBtns.forEach(btn => {
     filterBtns.forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
 
-    // Sincronizar texto del selector móvil
+
     selectValue.innerText = selectedText;
   });
 });
 
-// Validación de formulario de contacto
+// Validación de formulario 
 const form = document.querySelector("[data-form]");
 const formInputs = document.querySelectorAll("[data-form-input]");
 const formBtn = document.querySelector("[data-form-btn]");
@@ -149,7 +149,7 @@ navigationLinks.forEach(link => {
 
   function renderTecnologias(trackId) {
     const track = document.getElementById(trackId);
-    for (let i = 0; i < 2; i++) { // efecto infinito
+    for (let i = 0; i < 2; i++) { 
       tecnologiasData.forEach(tecnologia => {
         const item = document.createElement("div");
         item.className = "tecnologia-item";
@@ -158,8 +158,8 @@ navigationLinks.forEach(link => {
           <span>${tecnologia.nombre}</span>
         `;
         track.appendChild(item);
-        //tiempo de deslizamiento
-        item.style.animationDuration = `${Math.random() * 10 + 10}s`; //
+
+        item.style.animationDuration = `${Math.random() * 10 + 10}s`; 
 
       });
     }
