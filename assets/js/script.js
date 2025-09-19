@@ -167,3 +167,58 @@ navigationLinks.forEach(link => {
 
   renderTecnologias("scroll-track-1");
   renderTecnologias("scroll-track-2");
+
+
+    document.addEventListener("keydown", function (e) {
+    if (
+      e.key === "F12" ||
+      (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) ||
+      (e.ctrlKey && e.key === "u")
+    ) {
+      e.preventDefault();
+    }
+  });
+
+  
+  document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+  });
+
+  
+  const maxIframes = 4;
+  let wrappedCount = 0;
+
+  const observer = new MutationObserver(() => {
+    const iframes = document.querySelectorAll('iframe[src*="credly.com"]');
+    iframes.forEach(iframe => {
+      if (!iframe.dataset.wrapped) {
+        const wrapper = document.createElement("div");
+        wrapper.style.position = "relative";
+        wrapper.style.width = iframe.width + "px";
+        wrapper.style.height = iframe.height + "px";
+
+        iframe.parentNode.insertBefore(wrapper, iframe);
+        wrapper.appendChild(iframe);
+
+        const overlay = document.createElement("div");
+        overlay.style.position = "absolute";
+        overlay.style.top = "0";
+        overlay.style.left = "0";
+        overlay.style.width = "100%";
+        overlay.style.height = "100%";
+        overlay.style.zIndex = "10";
+        overlay.style.cursor = "default";
+
+        wrapper.appendChild(overlay);
+
+        iframe.dataset.wrapped = "true";
+        wrappedCount++;
+      }
+    });
+
+    if (wrappedCount >= maxIframes) {
+      observer.disconnect(); 
+    }
+  });
+
+  observer.observe(document.body, { childList: true, subtree: true });
