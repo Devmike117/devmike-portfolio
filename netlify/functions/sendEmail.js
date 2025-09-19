@@ -22,21 +22,20 @@ exports.handler = async function(event) {
           from_email: data.from_email,
           message: data.message
         },
-        user_id: process.env.EMAILJS_PUBLIC_KEY,    
-        accessToken: process.env.EMAILJS_PRIVATE_KEY 
+        user_id: process.env.EMAILJS_PUBLIC_KEY,
+        accessToken: process.env.EMAILJS_PRIVATE_KEY
       })
     });
 
+    const text = await response.text(); 
+
     if (!response.ok) {
-      const text = await response.text();
       throw new Error(`EmailJS API error: ${response.status} ${response.statusText} - ${text}`);
     }
 
-    const result = await response.json();
-
     return {
       statusCode: 200,
-      body: JSON.stringify({ success: true, result })
+      body: JSON.stringify({ success: true, result: text })
     };
   } catch (error) {
     return {
